@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.img-cover {
+    height: 250px;
+    width: 350px;
+    object-fit: cover;
+  }
+.padding {
+    padding-top: 20px;
+    padding-bottom: 5px;
+    padding-right: 50px;
+    padding-left: 50px;
+
+  }
+.headind-adjuster{
+    text-align: center;
+     font-size: 100px;
+  }
+.paragrph-aduster{
+    text-align: center;
+    font-size: 30px;
+
+  }
+.container{
+ display: grid;
+ grid-template-columns: 1fr 1fr 1fr 1fr;
+ grid-gap:25px;
+
+  }
+  .item{
+
+object-fit: cover;
+display: flex;
+flex-direction: column;
+}
+.link-adjuster{
+   text-align: center; 
+}
