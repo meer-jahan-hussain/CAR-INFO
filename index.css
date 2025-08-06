@@ -5,15 +5,24 @@
 
 
 .img-cover {
-    height: 250px;
-    width: 350px;
-    object-fit: cover;
-  }
+            height: 300px;
+            width: 400px;
+            object-fit: cover;
+        }
+
+
+        .padding-30 {
+            padding-top: 30px;
+            padding-bottom: 5px;
+            padding-right: 100px;
+            padding-left: 100px;
+
+        }
 .padding {
-    padding-top: 20px;
+    padding-top: 70px;
     padding-bottom: 5px;
-    padding-right: 50px;
-    padding-left: 50px;
+    padding-right: 25px;
+    padding-left: 25px;
 
   }
 .headind-adjuster{
@@ -27,7 +36,7 @@
   }
 .container{
  display: grid;
- grid-template-columns: 1fr 1fr 1fr 1fr;
+ grid-template-columns: 1fr 1fr 1fr 1fr ;
  grid-gap:25px;
 
   }
@@ -39,4 +48,8 @@ flex-direction: column;
 }
 .link-adjuster{
    text-align: center; 
+}
+.last-p{
+    text-align: right;
+    padding-top: 100px;
 }
