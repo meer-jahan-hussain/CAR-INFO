@@ -4,47 +4,125 @@
 }
 
 
+
 .img-cover {
-            height: 300px;
-            width: 400px;
-            object-fit: cover;
-        }
+  height: 300px;
+  width: 400px;
+  object-fit: cover;
+}
 
 
-        .padding-30 {
-            padding-top: 30px;
-            padding-bottom: 5px;
-            padding-right: 100px;
-            padding-left: 100px;
+.padding-30 {
+  padding-top: 30px;
+  padding-bottom: 5px;
+  padding-right: 100px;
+  padding-left: 100px;
 
-        }
+}
 .padding {
     padding-top: 70px;
     padding-bottom: 5px;
     padding-right: 25px;
     padding-left: 25px;
 
-  }
+
+}
 .headind-adjuster{
-    text-align: center;
-     font-size: 100px;
-  }
+  text-align: center;
+  font-size: 100px;
+}
 .paragrph-aduster{
     text-align: center;
     font-size: 30px;
 
   }
 .container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr  ;
+  grid-gap:25px;
+
+  }
+ 
+.item{
+
+  object-fit: cover;
+  display: flex;
+  flex-direction: column;
+}
+
+.link-adjuster{
+   text-align: center;
+   font-size: 25px;
+   color: black; 
+   
+}
+.last-p{
+    text-align: right;
+    padding-top: 100px;
+}
+ 
+  
+
+@media only screen and (max-width:185vh) {
+  .container{
  display: grid;
- grid-template-columns: 1fr 1fr 1fr 1fr ;
+ grid-template-columns: 1fr ;
  grid-gap:25px;
 
   }
-  .item{
+  .img-cover {
+            height: 600px;
+            width: 900px;
+            object-fit: cover;
+        }
+.link-adjuster{
+   text-align: center;
+   font-size: 50px; 
+}
+.headind-adjuster{
+    text-align: center;
+     font-size: 200px;
+   
+  }
 
-object-fit: cover;
-display: flex;
-flex-direction: column;
+.img-cover {
+  height: 300px;
+  width: 400px;
+  object-fit: cover;
+}
+
+
+.padding-30 {
+  padding-top: 30px;
+  padding-bottom: 5px;
+  padding-right: 100px;
+  padding-left: 100px;
+
+}
+.padding {
+    padding-top: 70px;
+    padding-bottom: 5px;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+.headind-adjuster{
+  text-align: center;
+  font-size: 100px;
+}
+.paragrph-aduster{
+    text-align: center;
+    font-size: 30px;
+  }
+.container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr ;
+  grid-gap:25px;
+  }
+.item{
+
+  object-fit: cover;
+  display: flex;
+  flex-direction: column;
 }
 .link-adjuster{
    text-align: center; 
@@ -53,11 +131,16 @@ flex-direction: column;
     text-align: right;
     padding-top: 100px;
 }
-@media only screen and (max-width:600px) {
-  .container{
- display: grid;
- grid-template-columns: 1fr ;
- grid-gap:25px;
+  .content-center {
+     padding-left: 100px;
+     padding-right: 100px;
+}
+.img-size{
+     width: 500px;
+            }
+  .heading-info{
+   text-align: 
+   center;font-size: 100px 
+  } 
 
-  }
 }
