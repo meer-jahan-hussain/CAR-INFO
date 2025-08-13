@@ -21,7 +21,6 @@
     display: grid;
     grid-template-columns: 100px 500px 1200px 100px;
     grid-template-rows: 20px 50px;
-    padding-bottom: 300px;
 }
 
 .item-para{
@@ -85,6 +84,7 @@
     display: grid;
     grid-template-columns: 900px;
     grid-template-rows: 80px 400px 500px;
+      padding-bottom: 50px;
 }
 
 .item-para {
@@ -168,8 +168,4 @@
     object-fit: cover;
     margin-left: 80px;
 
-}
-
-    
-
-}
+}}

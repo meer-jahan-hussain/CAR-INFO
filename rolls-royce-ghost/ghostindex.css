@@ -85,6 +85,7 @@
     display: grid;
     grid-template-columns: 900px;
     grid-template-rows: 80px 400px 500px;
+    padding-bottom: 50px;
 }
 
 .item-para {
