@@ -2,6 +2,14 @@
     margin: 0;
     padding: 0;
 }
+.a {
+  text-decoration: none;   /* normal mein underline nahi */
+}
+
+.a:hover {
+  text-decoration: underline; /* cursor le jaane par underline */
+  text-decoration-color: black; /* underline ka color */
+}
 
 .img-cover {
   height: 300px;

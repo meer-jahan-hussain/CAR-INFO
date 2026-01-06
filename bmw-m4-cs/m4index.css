@@ -2,10 +2,23 @@
     margin: 0;
     padding: 0;
 }
+.a {
+  text-decoration: none;   /* normal mein underline nahi */
+}
 
+.a:hover {
+  text-decoration: underline; /* cursor le jaane par underline */
+    text-decoration-color: black; 
+}
+.link-color{
+    color: black;
+    text-align: center;
+    font-size: 75px; 
+}
  .content-center {
     padding-left: 100px;
     padding-right: 100px;
+
 }
 
 .img-width-500{
