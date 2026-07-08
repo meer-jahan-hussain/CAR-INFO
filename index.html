@@ -27,11 +27,126 @@
   <meta name="twitter:image" content="https://meer-jahan-hussain.github.io/CAR-INFO/images/cover.jpg" />
 
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="theme.css">
   <link rel="stylesheet" href="index.css">
+  <script src="theme.js"></script>
+
+  <style>
+    /* Card design variables */
+    :root,
+    [data-theme="light"] {
+      --card-bg: #FFFFFF;
+      --card-hover-bg: #EEEEEE;
+      --card-border: #DDDDDD;
+      --card-shadow: rgba(0, 0, 0, 0.04);
+      --card-shadow-hover: rgba(0, 0, 0, 0.08);
+      --card-text-color: #111111;
+      --card-hover-text-color: #111111;
+      --card-desc-color: #555555;
+      --card-hover-desc-color: #555555;
+      --primary-color: #B8860B;
+    }
+
+    [data-theme="dark"] {
+      --card-bg: #0B1F35;
+      --card-hover-bg: #ACC8E5;
+      --card-border: #2A2A2A;
+      --card-shadow: rgba(0, 0, 0, 0.2);
+      --card-shadow-hover: rgba(0, 0, 0, 0.4);
+      --primary-color: #D4AF37;
+      --card-text-color: #ACC8E5;
+      --card-hover-text-color: #0B1F35;
+      --card-desc-color: #ACC8E5;
+      --card-hover-desc-color: #0B1F35;
+    }
+
+
+    /* Entire-card clickable styles */
+    .car-card-link {
+      text-decoration: none !important;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      height: 100%;
+      outline: none;
+    }
+
+    /* Card styling */
+    .car-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      box-shadow: 0 4px 12px var(--card-shadow);
+      color: var(--card-text-color);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      padding-bottom: clamp(1rem, 2vw, 1.5rem);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease;
+    }
+
+    .car-card * {
+      color: inherit;
+      transition: color 0.3s ease;
+    }
+
+    /* Card hover and focus states */
+    .car-card-link:hover .car-card,
+    .car-card-link:focus-visible .car-card {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px var(--card-shadow-hover);
+      border-color: var(--primary-color);
+      background-color: var(--card-hover-bg);
+      color: var(--card-hover-text-color);
+    }
+
+    /* Remove link lines */
+    .car-card-link,
+    .car-card-link:hover,
+    .car-card-link:focus-visible,
+    .car-card-link:hover .link-adjuster,
+    .car-card-link:focus-visible .link-adjuster {
+      text-decoration: none !important;
+    }
+
+    /* Description styling */
+    .car-description {
+      text-align: center;
+      font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+      color: var(--card-desc-color);
+      margin-top: 0.5rem;
+      padding: 0 1rem;
+      line-height: 1.5;
+      font-weight: 400;
+    }
+
+    .car-card-link:hover .car-description,
+    .car-card-link:focus-visible .car-description {
+      color: var(--card-hover-desc-color);
+    }
+
+    /* Keyboard navigation focus indicator */
+    .car-card-link:focus-visible {
+      outline: 2px solid var(--text-color);
+      outline-offset: 4px;
+      border-radius: 14px;
+    }
+  </style>
 
 </head>
 
 <body>
+
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
+    <span class="theme-icon theme-icon-sun" aria-hidden="true">&#9728;</span>
+    <span class="theme-icon theme-icon-moon" aria-hidden="true">&#9790;</span>
+  </button>
 
   <!-- MAIN HEADING -->
   <h1 class="headind-adjuster padding2">CAR INFO</h1>
@@ -42,97 +157,134 @@
 
     <!-- BMW M5 CS -->
     <div class="item">
-      <a href="./bmw-m5-cs/bmw-m5-cs-info.html" class="a a:hover">
-        <img class="img-cover padding" src="./bmw-m5-cs/bmw-m5-cs.jpg" alt="BMW M5 CS">
-        <h2 class="link-adjuster">BMW M5 CS</h2>
+      <a href="./bmw-m5-cs/bmw-m5-cs-info.html" class="a a:hover car-card-link">
+        <div class="car-card">
+          <img class="img-cover padding" src="./bmw-m5-cs/bmw-m5-cs.jpg" alt="BMW M5 CS">
+          <h2 class="link-adjuster">BMW M5 CS</h2>
+          <p class="car-description">Performance Without Compromise</p>
+        </div>
       </a>
     </div>
 
+
     <!-- BMW M4 CS -->
     <div class="item">
-      <a href="./bmw-m4-cs/bmw-m4-cs-info.html" class="a a:hover">
-        <img class="img-cover padding" src="./bmw-m4-cs/bmw-m4-cs.avif" alt="BMW M4 CS">
-        <h2 class="link-adjuster">BMW M4 CS</h2>
+      <a href="./bmw-m4-cs/bmw-m4-cs-info.html" class="a a:hover car-card-link">
+        <div class="car-card">
+          <img class="img-cover padding" src="./bmw-m4-cs/bmw-m4-cs.avif" alt="BMW M4 CS">
+          <h2 class="link-adjuster">BMW M4 CS</h2>
+          <p class="car-description">Pure M Performance.</p>
+        </div>
       </a>
     </div>
 
     <!-- Lamborghini Huracan -->
     <div class="item">
-      <a href="./lamborghini-huracan/lamborghini-huracan-info.html" class="a a:hover">
-        <img class="img-cover padding" src="./lamborghini-huracan/lamborghini-huracn.jpeg" alt="Lamborghini Huracan">
-        <h2 class="link-adjuster">LAMBORGHINI HURACAN</h2>
+      <a href="./lamborghini-huracan/lamborghini-huracan-info.html" class="a a:hover car-card-link">
+        <div class="car-card">
+          <img class="img-cover padding" src="./lamborghini-huracan/lamborghini-huracn.jpeg" alt="Lamborghini Huracan">
+          <h2 class="link-adjuster">LAMBORGHINI HURACAN</h2>
+          <p class="car-description"> The Art of Performance.</p>
+        </div>
       </a>
     </div>
 
     <!-- Lamborghini Urus -->
     <div class="item">
-      <a href="./lamborghini-urus/lamborghini-urus-info.html" class="a a:hover">
-        <img class="img-cover padding" src="./lamborghini-urus/lamborghini-urus.webp" alt="Lamborghini Urus">
-        <h2 class="link-adjuster">LAMBORGHINI URUS</h2>
+      <a href="./lamborghini-urus/lamborghini-urus-info.html" class="a a:hover car-card-link">
+        <div class="car-card">
+          <img class="img-cover padding" src="./lamborghini-urus/lamborghini-urus.webp" alt="Lamborghini Urus">
+          <h2 class="link-adjuster">LAMBORGHINI URUS</h2>
+          <p class="car-description">Extreme Performance, Elevated.</p>
+        </div>
       </a>
     </div>
 
     <!-- Porsche 911 GT3 RS -->
     <div class="item">
-      <a href="./porsche-911-gt3-rs/porsche-911-gt3-info.html" class="a a:hover">
-        <img class="img-cover padding" src="./porsche-911-gt3-rs/porsche-911-gt3.jpg" alt="Porsche 911 GT3 RS">
-        <h2 class="link-adjuster">PORSCHE 911 GT3 RS</h2>
+      <a href="./porsche-911-gt3-rs/porsche-911-gt3-info.html" class="a a:hover car-card-link">
+        <div class="car-card">
+          <img class="img-cover padding" src="./porsche-911-gt3-rs/porsche-911-gt3.jpg" alt="Porsche 911 GT3 RS">
+          <h2 class="link-adjuster">PORSCHE 911 GT3 RS</h2>
+          <p class="car-description">The Ultimate Track Machine.</p>
+        </div>
       </a>
     </div>
 
     <!-- Porsche Cayenne -->
     <div class="item">
-      <a href="./porsche-cayenne/porsche-cayenne-info.html" class="a a:hover">
-        <img class="img-cover padding" src="./porsche-cayenne/porsche-cayenne-.webp" alt="Porsche Cayenne">
-        <h2 class="link-adjuster">PORSCHE CAYENNE</h2>
+      <a href="./porsche-cayenne/porsche-cayenne-info.html" class="a a:hover car-card-link">
+        <div class="car-card">
+          <img class="img-cover padding" src="./porsche-cayenne/porsche-cayenne-.webp" alt="Porsche Cayenne">
+          <h2 class="link-adjuster">PORSCHE CAYENNE</h2>
+          <p class="car-description">Master Every Journey.</p>
+        </div>
       </a>
     </div>
 
     <!-- Rolls Royce Ghost -->
     <div class="item">
-      <a href="./rolls-royce-ghost/rolls-royce-ghost-info.html" class="a a:hover">
-        <img class="img-cover padding" src="./rolls-royce-ghost/rolls-royce-ghost.jpeg" alt="Rolls Royce Ghost">
-        <h2 class="link-adjuster">ROLLS ROYCE GHOST</h2>
+      <a href="./rolls-royce-ghost/rolls-royce-ghost-info.html" class="a a:hover car-card-link">
+        <div class="car-card">
+          <img class="img-cover padding" src="./rolls-royce-ghost/rolls-royce-ghost.jpeg" alt="Rolls Royce Ghost">
+          <h2 class="link-adjuster">ROLLS ROYCE GHOST</h2>
+          <p class="car-description">t Luxury in Every Detail.</p>
+        </div>
       </a>
     </div>
 
     <!-- Rolls Royce Phantom -->
     <div class="item">
-      <a href="./rolls-royce-phantom/rolls-royce-phantom-info.html" class="a a:hover">
-        <img class="img-cover padding" src="./rolls-royce-phantom/rolls-royce-phantom.webp" alt="Rolls Royce Phantom">
-        <h2 class="link-adjuster">ROLLS ROYCE PHANTOM</h2>
+      <a href="./rolls-royce-phantom/rolls-royce-phantom-info.html" class="a a:hover car-card-link">
+        <div class="car-card">
+          <img class="img-cover padding" src="./rolls-royce-phantom/rolls-royce-phantom.webp" alt="Rolls Royce Phantom">
+          <h2 class="link-adjuster">ROLLS ROYCE PHANTOM</h2>
+          <p class="car-description">The Pinnacle of Luxury.</p>
+        </div>
       </a>
     </div>
 
     <!-- Mercedes AMG G 63 -->
     <div class="item">
-      <a href="./gwagon/gwagon.html" class="a a:hover">
-        <img class="img-cover padding" src="./gwagon/gwagon.webp" alt="Mercedes AMG G 63">
-        <h2 class="link-adjuster">MERCEDES AMG G 63</h2>
+      <a href="./gwagon/gwagon.html" class="a a:hover car-card-link">
+        <div class="car-card">
+          <img class="img-cover padding" src="./gwagon/gwagon.webp" alt="Mercedes AMG G 63">
+          <h2 class="link-adjuster">MERCEDES AMG G 63</h2>
+          <p class="car-description">Luxury Meets Raw Power.</p>
+        </div>
       </a>
     </div>
 
     <!-- Rolls Royce Cullinan -->
     <div class="item">
-      <a href="./cullinan/cullinan.html" class="a a:hover">
-        <img class="img-cover padding" src="./cullinan/cullinan.webp" alt="Rolls Royce Cullinan">
-        <h2 class="link-adjuster">ROLLS ROYCE CULLINAN</h2>
+      <a href="./cullinan/cullinan.html" class="a a:hover car-card-link">
+        <div class="car-card">
+          <img class="img-cover padding" src="./cullinan/cullinan.webp" alt="Rolls Royce Cullinan">
+          <h2 class="link-adjuster">ROLLS ROYCE CULLINAN</h2>
+          <p class="car-description">Luxury Without Limits.</p>
+        </div>
       </a>
     </div>
 
     <!-- Koenigsegg Jesko -->
     <div class="item">
-      <a href="./jesko/jesko.html" class="a a:hover">
-        <img class="img-cover padding" src="./jesko/jesko.jpg" alt="Koenigsegg Jesko">
-        <h2 class="link-adjuster">KOENIGSEGG JESKO</h2>
+      <a href="./jesko/jesko.html" class="a a:hover car-card-link">
+        <div class="car-card">
+          <img class="img-cover padding" src="./jesko/jesko.jpg" alt="Koenigsegg Jesko">
+          <h2 class="link-adjuster">KOENIGSEGG JESKO</h2>
+          <p class="car-description">Built to Break Records.</p>
+        </div>
       </a>
     </div>
 
     <!-- Nissan GTR R35 -->
     <div class="item">
-      <a href="./gtr/gtr.html" class="a a:hover">
-        <img class="img-cover padding" src="./gtr/gtr.webp" alt="Nissan GTR R35">
-        <h2 class="link-adjuster">NISSAN GTR R35</h2>
+      <a href="./gtr/gtr.html" class="a a:hover car-card-link">
+        <div class="car-card">
+          <img class="img-cover padding" src="./gtr/gtr.webp" alt="Nissan GTR R35">
+          <h2 class="link-adjuster">NISSAN GTR R35</h2>
+          <p class="car-description">Track Soul. Street Heart.</p>
+        </div>
       </a>
     </div>
 
@@ -142,4 +294,5 @@
   <p class="last-p">CREATED BY: MEER JAHAN HUSSAIN</p>
 
 </body>
+
 </html>
