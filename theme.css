@@ -1,13 +1,15 @@
 :root,
 [data-theme="light"] {
-  --bg-color: #F5F5F5;
-  --text-color: #111111;
-  --link-color: #111111;
+  --bg-color: #FFF0D1;
+  --text-color: #3B3030;
+  --link-color: #3B3030;
   --underline-color: #C1121F;
-  --toggle-bg: #FFFFFF;
-  --toggle-border: #DDDDDD;
-  --toggle-hover: #EEEEEE;
-  --toggle-color: #111111;
+  --toggle-bg: #FFF0D1;
+  --toggle-border: #3B3030;
+  --toggle-hover: #3B3030;
+  --toggle-color: #3B3030;
+  --toggle-hover-color: #FFF0D1;
+  --toggle-hover-border: #FFF0D1;
 }
 
 [data-theme="dark"] {
@@ -15,10 +17,12 @@
   --text-color: #BBCFE3;
   --link-color: #BBCFE3;
   --underline-color: #E10600;
-  --toggle-bg: #FFFFFF;
+  --toggle-bg: #0B1F35;
   --toggle-border: #ACC8E5;
-  --toggle-hover: #F1F5F9;
-  --toggle-color: #112A46;
+  --toggle-hover: #ACC8E5;
+  --toggle-color: #BBCFE3;
+  --toggle-hover-color: #0B1F35;
+  --toggle-hover-border: #0B1F35;
 }
 
 html {
@@ -74,11 +78,13 @@ p {
   cursor: pointer;
   font-size: 1.25rem;
   line-height: 1;
-  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
 }
 
 .theme-toggle:hover {
   background-color: var(--toggle-hover);
+  border-color: var(--toggle-hover-border);
+  color: var(--toggle-hover-color);
 }
 
 .theme-toggle:focus-visible {
